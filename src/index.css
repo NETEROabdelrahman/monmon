@@ -15,11 +15,9 @@ body{
 .login-page{
   display: flex;
   width: 100vw;
-  height: 100vh;
   flex-direction: column;
   align-items: flex-end;
   padding: 20px;
-  gap: 35px;
 }
 
 .login-form{
@@ -29,6 +27,7 @@ body{
   width: 50%;
   min-width: 310px;
   height: 100%;
+  gap: 2vmin;
 }
 
 h1{
@@ -63,7 +62,7 @@ label{
   padding: 10px;
 }
 
-label h5{
+label .field-name{
   position: absolute;
   background-color: white;
   padding: 5px;
@@ -72,11 +71,19 @@ label h5{
   top: 0;
 }
 
+.blurred-msg{
+  position: absolute;
+    top: 50px;
+    left: 20px;
+    color: red;
+    font-size: 10px;
+}
+
 .login-button{
   text-align: center;
     background: #388b68;
     color: white;
-    font-size: 20px;
+    font-size: 4vmin;
     font-weight: 600;
     padding: 20px;
     border: none;
@@ -84,6 +91,7 @@ label h5{
     width: 40%;
     margin: 53px auto;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .login-button:disabled{
@@ -94,7 +102,7 @@ label h5{
 .login-page div{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .success{
@@ -105,7 +113,7 @@ label h5{
 .success img{
   width: 100vw;
   height: 70vh;
-  object-fit: cover;
+  object-fit: contain;
   border-bottom-left-radius: 80px;
 }
 
