@@ -117,6 +117,12 @@ label .field-name{
   border-bottom-left-radius: 80px;
 }
 
+@media (min-width:767px) {
+  .success img{
+    object-fit: cover;
+  }
+}
+
 .success h1{
   text-align: center;
 }
