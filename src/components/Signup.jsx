@@ -65,7 +65,7 @@ const Login = () => {
     }
 
     const handleEmailBlur = () => {
-        if (!isValidEmail(data.email)) {
+        if (!isValidEmail(data?.email)) {
             setEmailmsg(true)
         } else {
             setEmailmsg(false)
@@ -126,7 +126,7 @@ const Login = () => {
                     <input onBlur={handlePasswordAgainBlur} min={8} required={true}  type="password" id='passwordAgain' onChange={(e) => setData({ ...data, passwordAgain: e.target.value })} />
                 </label>
             </form>
-                <button onClick={submitData} disabled={!data.username || !data.email || !isValidEmail(data.email) || data.password.length <8 || !data.passwordAgain || data.password != data.passwordAgain} className="login-button">انشاء حساب</button>
+                <button onClick={submitData} disabled={!data?.username || !data?.email || !isValidEmail(data?.email) || data?.password?.length <8 || !data?.passwordAgain || data?.password != data?.passwordAgain} className="login-button">انشاء حساب</button>
         </motion.div>
     );
 };
