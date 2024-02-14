@@ -17,7 +17,7 @@ const Login = () => {
 
     const fetchAccounts = async () => {
         try {
-            const response = await axios.get('../../src/data.json');
+            const response = await axios.get('/data.json');
             console.log(response.data)
           setaccounts(response.data.users);
         } catch (error) {
