@@ -8,12 +8,10 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
     
     const navigate = useNavigate();
-    const alertSuccess = () => toast.success('successfully created account');
     const alertError = (msg) => toast.error(msg);
 
     const [accounts, setaccounts] = useState({})
     const [data, setData] = useState({})
-    console.log(accounts)
 
     const fetchAccounts = async () => {
         try {
@@ -46,11 +44,8 @@ const Login = () => {
             password: data.password,
             email: data.email
         });
-        //alertSuccess()
-        //setTimeout(() => {
             navigate("/login")
             
-        //}, 1000);
     };
 
     const isValidEmail = (email) => {

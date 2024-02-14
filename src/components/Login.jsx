@@ -20,7 +20,7 @@ const Login = () => {
                 type="numeric"
                 inputMode="numeric"
                 style={{ padding: '15px',display:"flex", width:"100%", justifyContent: "space-evenly" }}
-                inputStyle={{ borderColor: '#b9a4a4', width:"100px", height:"100px" }}
+                inputStyle={{ borderColor: '#b9a4a4', width:"75px", height:"75px" }}
                 inputFocusStyle={{ borderColor: 'green' }}
                 onChange={(value) => {
                     if (value.length == 4) {
