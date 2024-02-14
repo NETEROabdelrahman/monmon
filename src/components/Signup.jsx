@@ -1,64 +1,24 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import { ToastContainer, toast } from 'react-custom-alert';
-import 'react-custom-alert/dist/index.css';
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     
     const navigate = useNavigate();
-    const alertError = (msg) => toast.error(msg);
+    
 
-    const [accounts, setaccounts] = useState({})
     const [data, setData] = useState({})
     const [emailmsg, setEmailmsg] = useState(false)
     const [passwordmsg, setPasswordmsg] = useState(false)
     const [passwordAgainmsg, setPasswordAgainmsg] = useState(false)
 
 
-    console.log(emailmsg)
-    const fetchAccounts = async () => {
-        try {
-            const response = await axios.get('/data.json');
-            console.log(response.data)
-          setaccounts(response.data.users);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-    };
-
-    useEffect(() => {
-       fetchAccounts() 
-    }, [])
-    // useEffect(() => {
-    //     if (!isValidEmail(data.email)) {
-    //         setEmailmsg(true)
-    //     } else {
-    //         setEmailmsg(false)
-    //     }
-    // },[data.email])
-    
-
-    const submitData = async (e) => {
+    const submitData = (e) => {
         e.preventDefault();
-        accounts.forEach(account => {
-            if (data.username == account.username) {
-                alertError("username taken");
-            } if (data.email == account.email) {
-                alertError("email taken");
-            }
-            return;
-        });
-        
-        accounts.push({
-            username: data.username,
-            password: data.password,
-            email: data.email
-        });
-            navigate("/login")
-            
+            navigate("/login");
     };
+
+
 
     const isValidEmail = (email) => {
         return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
@@ -90,7 +50,6 @@ const Login = () => {
     
     return (
         <motion.div exit={{ x: '-100vw' }} initial={{ x: '100vw' }} animate={{ x: 0 }} transition={{ ease: 'easeInOut' }} className="login-page">
-            <ToastContainer floatingTime={5000} containerStyle={{ position: "fixed" }} />
             <h1>
                 انشاء حساب جديد
             </h1>
